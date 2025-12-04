@@ -1,6 +1,20 @@
 .table-page {
   h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .search-input {
+    margin-bottom: 1.5rem;
+    max-width: 400px;
+  }
+
+  .data-table {
+    margin-bottom: 2rem;
+  }
+
+  .pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
   }
 }
-
