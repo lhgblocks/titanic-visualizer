@@ -1,49 +1,49 @@
 # Titanic Visualizer
 
-Aplicação React para visualização de dados do Titanic, desenvolvida com Vite, React Router e ApexCharts.
+React application for visualizing Titanic data, built with Vite, React Router, and ApexCharts.
 
-## 📋 Pré-requisitos
+## 📋 Prerequisites
 
-- Node.js 20.19+ ou 22.12+
+- Node.js 20.19+ or 22.12+
 - npm 10.7.0+
 
-## 🚀 Instalação
+## 🚀 Installation
 
-1. Clone o repositório ou navegue até a pasta do projeto:
+1. Clone the repository or navigate to the project folder:
 ```bash
 cd titanic-visualizer
 ```
 
-2. Instale as dependências:
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-## 🏃 Executando o Projeto
+## 🏃 Running the Project
 
-### Modo Desenvolvimento
+### Development Mode
 
-Para iniciar o servidor de desenvolvimento:
+To start the development server:
 
 ```bash
 npm run dev
 ```
 
-O projeto estará disponível em `http://localhost:5173` (ou outra porta indicada pelo Vite).
+The project will be available at `http://localhost:5173` (or another port indicated by Vite).
 
-### Build de Produção
+### Production Build
 
-Para criar uma build de produção:
+To create a production build:
 
 ```bash
 npm run build
 ```
 
-Os arquivos otimizados serão gerados na pasta `dist/`.
+Optimized files will be generated in the `dist/` folder.
 
-### Preview da Build
+### Preview Build
 
-Para visualizar a build de produção localmente:
+To preview the production build locally:
 
 ```bash
 npm run preview
@@ -51,99 +51,99 @@ npm run preview
 
 ### Linting
 
-Para verificar o código com ESLint:
+To check the code with ESLint:
 
 ```bash
 npm run lint
 ```
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
 ```
 titanic-visualizer/
-├── public/                 # Arquivos estáticos públicos
+├── public/                 # Public static files
 ├── src/
-│   ├── components/        # Componentes reutilizáveis
-│   │   └── Sidebar/       # Componente de navegação lateral
-│   ├── data/              # Dados e mocks
-│   │   └── mock/          # Dados mockados
-│   ├── layouts/           # Layouts da aplicação
-│   │   └── MainLayout.jsx # Layout principal com Sidebar
-│   ├── pages/             # Páginas da aplicação
-│   │   ├── TablePage.jsx  # Página de tabela
-│   │   ├── LineChartPage.jsx # Página de gráfico de linha
-│   │   └── HistogramPage.jsx  # Página de histograma
-│   ├── router/            # Configuração de rotas
-│   │   ├── AppRouter.jsx  # Router principal
-│   │   └── routesConfig.jsx # Configuração de rotas
-│   ├── styles/            # Estilos globais
-│   │   ├── global.scss    # Estilos globais
-│   │   ├── variables.scss # Variáveis SCSS
-│   │   └── mixins.scss    # Mixins SCSS
-│   ├── App.jsx            # Componente raiz
-│   └── main.jsx           # Ponto de entrada
+│   ├── components/        # Reusable components
+│   │   └── Sidebar/       # Side navigation component
+│   ├── data/              # Data and mocks
+│   │   └── mock/          # Mock data
+│   ├── layouts/           # Application layouts
+│   │   └── MainLayout.jsx # Main layout with Sidebar
+│   ├── pages/             # Application pages
+│   │   ├── TablePage.jsx  # Table page
+│   │   ├── LineChartPage.jsx # Line chart page
+│   │   └── HistogramPage.jsx  # Histogram page
+│   ├── router/            # Route configuration
+│   │   ├── AppRouter.jsx  # Main router
+│   │   └── routesConfig.jsx # Route configuration
+│   ├── styles/            # Global styles
+│   │   ├── global.scss    # Global styles
+│   │   ├── variables.scss # SCSS variables
+│   │   └── mixins.scss    # SCSS mixins
+│   ├── App.jsx            # Root component
+│   └── main.jsx           # Entry point
 ├── index.html
 ├── package.json
 └── vite.config.js
 ```
 
-## 🛠 Tecnologias Utilizadas
+## 🛠 Technologies Used
 
-- **React 19.2.0** - Biblioteca JavaScript para interfaces
-- **Vite 7.2.4** - Build tool e dev server
-- **React Router DOM 6.20.0** - Roteamento
-- **React Bootstrap 2.9.1** - Componentes UI baseados em Bootstrap
-- **Bootstrap 5.3.2** - Framework CSS
-- **ApexCharts 4.0.0** - Biblioteca de gráficos
-- **React ApexCharts 1.9.0** - Wrapper React para ApexCharts
-- **Sass 1.69.5** - Pré-processador CSS
+- **React 19.2.0** - JavaScript library for user interfaces
+- **Vite 7.2.4** - Build tool and dev server
+- **React Router DOM 6.20.0** - Routing
+- **React Bootstrap 2.9.1** - Bootstrap-based UI components
+- **Bootstrap 5.3.2** - CSS framework
+- **ApexCharts 4.0.0** - Charting library
+- **React ApexCharts 1.9.0** - React wrapper for ApexCharts
+- **Sass 1.69.5** - CSS preprocessor
 
-## 🎯 Funcionalidades
+## 🎯 Features
 
-### Rotas Disponíveis
+### Available Routes
 
-- `/` - Redireciona para `/table`
-- `/table` - Página de tabela com dados brutos (paginação e busca)
-- `/line-chart` - Gráfico de linha Age × Fare
-- `/histogram` - Histograma de sobreviventes por classe
-- `*` - Página 404 para rotas não encontradas
+- `/` - Redirects to `/table`
+- `/table` - Table page with raw data (pagination and search)
+- `/line-chart` - Line chart Age × Fare
+- `/histogram` - Histogram of survivors by class
+- `*` - 404 page for routes not found
 
-### Componentes Principais
+### Main Components
 
-- **Sidebar**: Navegação lateral fixa com dropdown para trocar de rota
-- **MainLayout**: Layout principal com grid responsivo (Sidebar + Content)
-- **AppRouter**: Configuração de rotas aninhadas com React Router v6+
+- **Sidebar**: Fixed side navigation with dropdown to switch routes
+- **MainLayout**: Main layout with responsive grid (Sidebar + Content)
+- **AppRouter**: Nested route configuration with React Router v6+
 
-## 🎨 Estilos
+## 🎨 Styles
 
-O projeto utiliza **SCSS modular** com a sintaxe moderna (`@use` em vez de `@import`):
+The project uses **modular SCSS** with modern syntax (`@use` instead of `@import`):
 
-- Variáveis globais em `src/styles/variables.scss`
-- Mixins reutilizáveis em `src/styles/mixins.scss`
-- Estilos globais em `src/styles/global.scss`
-- Cada componente/página possui seu próprio arquivo `.scss`
+- Global variables in `src/styles/variables.scss`
+- Reusable mixins in `src/styles/mixins.scss`
+- Global styles in `src/styles/global.scss`
+- Each component/page has its own `.scss` file
 
-## 📝 Padrões de Código
+## 📝 Code Standards
 
-- **Clean Code**: Componentes pequenos com responsabilidade única
-- **Performance**: Uso de `React.memo`, `useCallback` e `useMemo`
-- **SCSS Modular**: Estilos separados por componente
-- **Imports Organizados**: React → libs → components → styles
-- **Sem CSS Inline**: Todos os estilos em arquivos SCSS
+- **Clean Code**: Small components with single responsibility
+- **Performance**: Use of `React.memo`, `useCallback` and `useMemo`
+- **Modular SCSS**: Styles separated by component
+- **Organized Imports**: React → libs → components → styles
+- **No Inline CSS**: All styles in SCSS files
 
-## 🔧 Scripts Disponíveis
+## 🔧 Available Scripts
 
-| Script | Descrição |
-|--------|-----------|
-| `npm run dev` | Inicia o servidor de desenvolvimento |
-| `npm run build` | Cria build de produção |
-| `npm run preview` | Visualiza a build de produção |
-| `npm run lint` | Executa o ESLint |
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Starts the development server |
+| `npm run build` | Creates production build |
+| `npm run preview` | Previews the production build |
+| `npm run lint` | Runs ESLint |
 
-## 📄 Licença
+## 📄 License
 
-Este projeto é privado.
+This project is private.
 
 ---
 
-**Desenvolvido com ❤️ usando React + Vite**
+**Developed with ❤️ using React + Vite**

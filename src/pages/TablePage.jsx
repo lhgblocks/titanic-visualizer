@@ -4,7 +4,7 @@ export default function TablePage() {
   return (
     <div className="table-page">
       <h2>Raw Table Page</h2>
-      <p>Esta página exibirá a tabela com paginação e busca.</p>
+      <p>This page will display the table with pagination and search.</p>
     </div>
   );
 }

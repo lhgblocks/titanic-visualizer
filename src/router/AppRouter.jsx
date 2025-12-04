@@ -9,12 +9,12 @@ export default function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Layout principal compartilhado */}
+        {/* Main shared layout */}
         <Route element={<MainLayout />}>
-          {/* Redireciona rota raiz para /table */}
+          {/* Redirect root route to /table */}
           <Route path="/" element={<Navigate to="/table" replace />} />
 
-          {/* Rotas internas vindas do config */}
+          {/* Internal routes from config */}
           {routes.map((route) => (
             <Route
               key={route.path}
@@ -23,10 +23,10 @@ export default function AppRouter() {
             />
           ))}
 
-          {/* Página 404 */}
+          {/* 404 Page */}
           <Route
             path="*"
-            element={<h2 style={{ padding: "2rem" }}>404 - Página não encontrada</h2>}
+            element={<h2 style={{ padding: "2rem" }}>404 - Page not found</h2>}
           />
         </Route>
       </Routes>
