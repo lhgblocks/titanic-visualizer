@@ -4,15 +4,19 @@ import "./LineChartView.scss";
 
 export default function LineChartView({ data = [] }) {
   const sortedData = useMemo(() => {
-    return [...data].sort((a, b) => a.age - b.age);
+    return [...data].sort((a, b) => {
+      const aStart = parseInt(a.ageGroup.split("-")[0], 10);
+      const bStart = parseInt(b.ageGroup.split("-")[0], 10);
+      return aStart - bStart;
+    });
   }, [data]);
 
   const chartData = useMemo(() => {
     return [
       {
-        name: "Fare",
+        name: "Average Fare",
         data: sortedData.map((item) => ({
-          x: item.age,
+          x: item.ageGroup,
           y: item.fare,
         })),
       },
@@ -23,30 +27,19 @@ export default function LineChartView({ data = [] }) {
     () => ({
       chart: {
         type: "line",
-
-        toolbar: {
-          show: false,
-        },
-        zoom: {
-          enabled: false,
-        },
-        animations: {
-          enabled: true,
-        },
+        toolbar: { show: false },
+        zoom: { enabled: false },
+        animations: { enabled: true },
       },
       xaxis: {
-        title: {
-          text: "Age",
-        },
-        type: "numeric",
+        title: { text: "Age Group" },
+        type: "category",
       },
       yaxis: {
-        title: {
-          text: "Fare",
-        },
+        title: { text: "Average Fare" },
       },
       title: {
-        text: "Age × Fare",
+        text: "Average Fare by Age Group",
         align: "center",
       },
       stroke: {
@@ -54,7 +47,7 @@ export default function LineChartView({ data = [] }) {
         width: 3,
       },
       markers: {
-        size: 5,
+        size: 6,
       },
       grid: {
         strokeDashArray: 4,
@@ -65,7 +58,12 @@ export default function LineChartView({ data = [] }) {
 
   return (
     <div className="line-chart-view">
-      <Chart options={chartOptions} series={chartData} type="line" height={400} />
+      <Chart
+        options={chartOptions}
+        series={chartData}
+        type="line"
+        height={400}
+      />
     </div>
   );
 }

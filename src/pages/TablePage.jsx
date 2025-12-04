@@ -1,6 +1,7 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { Table, Form, Pagination } from "react-bootstrap";
-import { mockTableData } from "../data/mock/mockTableData";
+import titanicData from "../data/titanic.json";
+import { getTableData } from "../data/processData";
 import { useSearch } from "../hooks/useSearch";
 import { usePagination } from "../hooks/usePagination";
 import "./TablePage.scss";
@@ -8,7 +9,9 @@ import "./TablePage.scss";
 export default function TablePage() {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredData = useSearch(mockTableData, searchQuery, [
+  const tableData = useMemo(() => getTableData(titanicData), []);
+
+  const filteredData = useSearch(tableData, searchQuery, [
     "Name",
     "Sex",
     "Age",
@@ -118,8 +121,12 @@ export default function TablePage() {
                 <td>{passenger.PassengerId}</td>
                 <td>{passenger.Name}</td>
                 <td>{passenger.Sex}</td>
-                <td>{passenger.Age}</td>
-                <td>${passenger.Fare.toFixed(2)}</td>
+                <td>{passenger.Age ?? "N/A"}</td>
+                <td>
+                  {passenger.Fare != null
+                    ? `$${passenger.Fare.toFixed(2)}`
+                    : "N/A"}
+                </td>
                 <td>{passenger.Pclass}</td>
                 <td>{passenger.Survived === 1 ? "Yes" : "No"}</td>
               </tr>
